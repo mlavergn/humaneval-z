@@ -28,22 +28,26 @@ It consists of 820 high-quality human-crafted data samples (each with test cases
 _HOMEPAGE = "https://github.com/THUDM/CodeGeeX"
 
 def get_url(name):
-    urls = {"test": f"data/{name}/data/humaneval.jsonl"}
-    return urls
+    url = f"data/{name}/data/humaneval.jsonl"
+    return url
 
 def split_generator(dl_manager, name):
     downloaded_files = get_url(name)
     downloaded_files = dl_manager.download(get_url(name))
     return [
-    datasets.SplitGenerator(name=datasets.Split.TEST, gen_kwargs={"filepath": downloaded_files["test"]}),
-            ]
-
+        datasets.SplitGenerator(
+            name=datasets.Split.TEST,
+            gen_kwargs={
+                "filepath": downloaded_files,
+            },
+        )
+    ]
 
 class HumanEvalXConfig(datasets.BuilderConfig):
     """BuilderConfig """
 
     def __init__(self, name, description, features, **kwargs):
-        super(HumanEvalXConfig, self).__init__(version=datasets.Version("2.1.0", ""), **kwargs)
+        super(HumanEvalXConfig, self).__init__(version=datasets.Version("1.0.0", ""), **kwargs)
         self.name = name
         self.description = description
         self.features = features
