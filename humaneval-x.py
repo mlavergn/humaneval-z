@@ -32,7 +32,6 @@ def get_url(name):
     return url
 
 def split_generator(dl_manager, name):
-    downloaded_files = get_url(name)
     downloaded_files = dl_manager.download(get_url(name))
     return [
         datasets.SplitGenerator(
