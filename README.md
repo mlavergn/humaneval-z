@@ -31,7 +31,7 @@ The dataset is currently used for two tasks: code generation and code translatio
 The dataset contains coding problems in 5 programming languages: Python, C++, Java, JavaScript, and Go.
 
 ## Dataset Structure
-To load the dataset you need to specify a subset among the **5 exiting languages**  `[python, cpp, go, java, js]`. By default `python` is loaded. 
+To load the dataset you need to specify a subset among the 5 exiting languages  `[python, cpp, go, java, js]`. By default `python` is loaded. 
 
 ```python
 from datasets import load_dataset
