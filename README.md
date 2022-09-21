@@ -22,9 +22,7 @@ task_ids:
 # HumanEval-X
 
 ## Dataset Description
-[HumanEval-X](https://github.com/THUDM/CodeGeeX) is a benchmark for the evaluation of the multilingual ability of code generative models. It consists of 820 high-quality human-crafted data samples (each with test cases) in Python, C++, Java, JavaScript, and Go, and can be used for various tasks.
-
-The dataset is currently used for two tasks: code generation and code translation. For code generation, the model uses declaration and docstring as input to generate the solution. For code translation, the model uses declarations in both languages and the solution in the source language as input, to generate solutions in the target language. 
+[HumanEval-X](https://github.com/THUDM/CodeGeeX) is a benchmark for evaluating the multilingual ability of code generative models. It consists of 820 high-quality human-crafted data samples (each with test cases) in Python, C++, Java, JavaScript, and Go, and can be used for various tasks, such as code generation and translation.
 
 ## Languages
 
