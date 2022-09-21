@@ -67,7 +67,7 @@ next(iter(data["test"]))
 
 ## Data Splits
 
-Each subset has one splits: test.
+Each subset has one split: test.
 
 ## Citation Information
 
