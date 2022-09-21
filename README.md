@@ -33,7 +33,7 @@ To load the dataset you need to specify a subset among the 5 exiting languages  
 
 ```python
 from datasets import load_dataset
-load_dataset("loubnabnl/humaneval-x", "js")
+load_dataset("THUDM/humaneval-x", "js")
 
 DatasetDict({
     test: Dataset({
