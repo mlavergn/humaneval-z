@@ -46,7 +46,7 @@ DatasetDict({
 ```
 
 ```python
-next(iter(data["train"]))
+next(iter(data["test"]))
 {'task_id': 'JavaScript/0',
  'prompt': '/* Check if in given list of numbers, are any two numbers closer to each other than\n  given threshold.\n  >>> hasCloseElements([1.0, 2.0, 3.0], 0.5)\n  false\n  >>> hasCloseElements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)\n  true\n  */\nconst hasCloseElements = (numbers, threshold) => {\n',
  'declaration': '\nconst hasCloseElements = (numbers, threshold) => {\n',
