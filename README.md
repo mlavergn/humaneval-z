@@ -9,14 +9,14 @@ license:
 - apache-2.0
 multilinguality:
 - multilingual
-pretty_name: HumanEval-X
 size_categories:
 - unknown
 source_datasets: []
 task_categories:
-- sequence-modeling
+- text-generation
 task_ids:
 - language-modeling
+pretty_name: HumanEval-X
 ---
 
 # HumanEval-X
