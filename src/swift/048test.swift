@@ -1,0 +1,7 @@
+precondition(isPalindrome(""))
+precondition(isPalindrome("aba"))
+precondition(isPalindrome("aaaaa"))
+precondition(!isPalindrome("zbcd"))
+precondition(isPalindrome("xywyx"))
+precondition(!isPalindrome("xywyz"))
+precondition(!isPalindrome("xywzx"))

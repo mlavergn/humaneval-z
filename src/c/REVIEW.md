@@ -1,0 +1,184 @@
+# C review
+
+Check off each task once reviewed. Each task is `NNNtask.md`, `NNNsolution.c` and `NNNtest.c`, laid out as in `src/FORMAT.md`; the C conventions (types, ownership, "no result") are in FORMAT.md's language rules.
+
+Status: `scripts/check.py c` passes 164/164. Each task's `test` and `example_test` build with `-Wall -Wextra -Werror` and run under AddressSanitizer + UBSan, so a leak, including an unfreed result in a test, fails it.
+
+## Basis
+
+- Ported from `src/zig/` (semantics, including the Zig deviations from Go noted in `src/zig/REVIEW.md`).
+- Tests come from the Go `test` / `example_test` asserts (C++ for tasks 50 and 95), the same as for Zig.
+- Docstrings come from the Zig prompts, with names in `snake_case` and C-specific API notes (ownership, `out_len`, out-params) appended.
+- Solutions don't define helper functions (FORMAT.md requires the solution to start with the declaration, and C needs a prototype before use), so sorting and prime checks are inlined.
+- Tests: most were translated mechanically from Go's `assert.Equal` lines. Tasks marked ✋ were hand-ported.
+
+## Carry-overs from the Zig review
+
+_Fixes from the Zig review are listed here as they're carried into C._
+
+## Tasks
+
+- [ ] 0. `has_close_elements`
+- [ ] 1. `separate_paren_groups`
+- [ ] 2. `truncate_number` ✋
+- [ ] 3. `below_zero`
+- [ ] 4. `mean_absolute_deviation` ✋
+- [ ] 5. `intersperse`
+- [ ] 6. `parse_nested_parens`
+- [ ] 7. `filter_by_substring`
+- [ ] 8. `sum_product`: pair written to `out[2]`
+- [ ] 9. `rolling_max`
+- [ ] 10. `make_palindrome`: `is_palindrome` is provided in the prompt
+- [ ] 11. `string_xor`
+- [ ] 12. `longest`: returns a malloc'd copy, or NULL for empty input
+- [ ] 13. `greatest_common_divisor`
+- [ ] 14. `all_prefixes`
+- [ ] 15. `string_sequence`
+- [ ] 16. `count_distinct_characters`
+- [ ] 17. `parse_music`
+- [ ] 18. `how_many_times`
+- [ ] 19. `sort_numbers`
+- [ ] 20. `find_closest_elements`: pair written to `double out[2]`
+- [ ] 21. `rescale_to_unit`
+- [ ] 22. `filter_integers` ✋: `value` tagged struct (kind + union) defined in the prompt
+- [ ] 23. `string_length`: named `string_length`: `strlen` clashes with libc
+- [ ] 24. `largest_divisor`
+- [ ] 25. `factorize`
+- [ ] 26. `remove_duplicates`
+- [ ] 27. `flip_case`
+- [ ] 28. `concatenate`
+- [ ] 29. `filter_by_prefix`
+- [ ] 30. `get_positive`
+- [ ] 31. `is_prime`
+- [ ] 32. `find_zero` ✋: `poly` is provided in the prompt. Test: `srand(42)`
+- [ ] 33. `sort_third` ✋: in-place insertion sort over every third index (no helper function)
+- [ ] 34. `unique`: insertion into a sorted buffer, skipping duplicates
+- [ ] 35. `max_element`
+- [ ] 36. `fizz_buzz`
+- [ ] 37. `sort_even` ✋: in-place insertion sort over the even indices
+- [ ] 38. `decode_cyclic` ✋: `encode_cyclic` is provided in the prompt. Test: `srand(42)`
+- [ ] 39. `prime_fib`
+- [ ] 40. `triples_sum_to_zero`
+- [ ] 41. `car_race_collision`
+- [ ] 42. `incr_list`
+- [ ] 43. `pairs_sum_to_zero`
+- [ ] 44. `change_base` ✋
+- [ ] 45. `triangle_area`
+- [ ] 46. `fib4`
+- [ ] 47. `median`: returns NAN if allocation fails
+- [ ] 48. `is_palindrome`
+- [ ] 49. `modp`
+- [ ] 50. `decode_shift` ✋: `encode_shift` is provided in the prompt. Test: `srand(42)`
+- [ ] 51. `remove_vowels`
+- [ ] 52. `below_threshold`
+- [ ] 53. `add` ✋: test: `srand(42)` for the random cases
+- [ ] 54. `same_chars`
+- [ ] 55. `fib`
+- [ ] 56. `correct_bracketing`
+- [ ] 57. `monotonic`
+- [ ] 58. `common`
+- [ ] 59. `largest_prime_factor`
+- [ ] 60. `sum_to_n`
+- [ ] 61. `correct_bracketing`
+- [ ] 62. `derivative`
+- [ ] 63. `fibfib`
+- [ ] 64. `vowels_count`
+- [ ] 65. `circular_shift`
+- [ ] 66. `digitsum`
+- [ ] 67. `fruit_distribution`
+- [ ] 68. `pluck`: `bool` result + pair in `out[2]` (false = no even value)
+- [ ] 69. `search`
+- [ ] 70. `strange_sort_list`
+- [ ] 71. `triangle_area`
+- [ ] 72. `will_it_fly`: palindrome check folded into the sum loop
+- [ ] 73. `smallest_change`
+- [ ] 74. `total_match`: returns malloc'd copies of the chosen list's strings
+- [ ] 75. `is_multiply_prime`
+- [ ] 76. `is_simple_power`
+- [ ] 77. `iscube`
+- [ ] 78. `hex_key`
+- [ ] 79. `decimal_to_binary`
+- [ ] 80. `is_happy`
+- [ ] 81. `numerical_letter_grade`
+- [ ] 82. `prime_length`
+- [ ] 83. `starts_one_ends`
+- [ ] 84. `solve`
+- [ ] 85. `add`
+- [ ] 86. `anti_shuffle`
+- [ ] 87. `get_row` ✋: jagged grid input (`lst`, `lst_lens`, `lst_len`); returns a malloc'd `coord` array
+- [ ] 88. `sort_array`
+- [ ] 89. `encrypt`
+- [ ] 90. `next_smallest` ✋: `bool` result + `*out` (false = no 2nd smallest)
+- [ ] 91. `is_bored`
+- [ ] 92. `any_int` ✋: `value` tagged struct for the arguments
+- [ ] 93. `encode`
+- [ ] 94. `skjkasdkd`
+- [ ] 95. `check_dict_case` ✋: dict passed as an array of `{ key, value }` string pairs
+- [ ] 96. `count_up_to`
+- [ ] 97. `multiply`
+- [ ] 98. `count_upper`
+- [ ] 99. `closest_integer`
+- [ ] 100. `make_a_pile`
+- [ ] 101. `words_string`
+- [ ] 102. `choose_num`
+- [ ] 103. `rounded_avg` ✋: NULL where Zig returns null (m < n)
+- [ ] 104. `unique_digits`
+- [ ] 105. `by_length`
+- [ ] 106. `f`
+- [ ] 107. `even_odd_palindrome`: pair written to `out[2]`
+- [ ] 108. `count_nums` ✋
+- [ ] 109. `move_one_ball`
+- [ ] 110. `exchange`: returns a malloc'd "YES"/"NO"
+- [ ] 111. `histogram` ✋: returns a malloc'd `letter_count` array sorted by letter
+- [ ] 112. `reverse_delete` ✋: returns a `reverse_delete_result` struct; its `string` is malloc'd
+- [ ] 113. `odd_count`
+- [ ] 114. `minsubarraysum`
+- [ ] 115. `max_fill`: jagged grid input
+- [ ] 116. `sort_array`: uses gcc/clang's `__builtin_popcountll`
+- [ ] 117. `select_words`
+- [ ] 118. `get_closest_vowel`: returns a malloc'd 0- or 1-char string
+- [ ] 119. `match_parens`: returns a malloc'd "Yes"/"No"
+- [ ] 120. `maximum`
+- [ ] 121. `solution`
+- [ ] 122. `add_elements`
+- [ ] 123. `get_odd_collatz`
+- [ ] 124. `valid_date`
+- [ ] 125. `split_words` ✋: returns a `split_result` struct (words or count)
+- [ ] 126. `is_sorted`
+- [ ] 127. `intersection`: intervals passed as `const long long[2]`; returns a malloc'd "YES"/"NO"
+- [ ] 128. `prod_signs`: `bool` result + `*out` (false = empty input)
+- [ ] 129. `minpath`: grid input as for 115
+- [ ] 130. `tri`
+- [ ] 131. `digits`
+- [ ] 132. `is_nested`
+- [ ] 133. `sum_squares`
+- [ ] 134. `check_if_last_char_is_a_letter`
+- [ ] 135. `can_arrange`
+- [ ] 136. `largest_smallest_integers` ✋: returns an `extremes` struct with has_/value pairs
+- [ ] 137. `compare_one` ✋: `value` tagged struct; `bool` result + `*out` (false = equal)
+- [ ] 138. `is_equal_to_sum_even`
+- [ ] 139. `special_factorial`
+- [ ] 140. `fix_spaces`
+- [ ] 141. `file_name_check`: returns a malloc'd "Yes"/"No"
+- [ ] 142. `sum_squares`
+- [ ] 143. `words_in_sentence`
+- [ ] 144. `simplify`
+- [ ] 145. `order_by_points`
+- [ ] 146. `specialfilter`
+- [ ] 147. `get_max_triples`
+- [ ] 148. `bf`: returns malloc'd copies of the planet names
+- [ ] 149. `sorted_list_sum`
+- [ ] 150. `x_or_y`
+- [ ] 151. `double_the_difference` ✋
+- [ ] 152. `compare`
+- [ ] 153. `strongest_extension`: returns a malloc'd "Class.Extension"
+- [ ] 154. `cycpattern_check`
+- [ ] 155. `even_odd_count`: pair written to `out[2]`
+- [ ] 156. `int_to_mini_roman`
+- [ ] 157. `right_angle_triangle`
+- [ ] 158. `find_max`: returns a malloc'd copy
+- [ ] 159. `eat`: pair written to `out[2]`
+- [ ] 160. `do_algebra`: an unrecognised operator yields 0 (Zig returns an error)
+- [ ] 161. `solve`
+- [ ] 162. `string_to_md5`: uses OpenSSL's EVP API (`<openssl/evp.h>` in the prompt; link with `-lcrypto`); NULL for empty text
+- [ ] 163. `generate_integers`

@@ -1,0 +1,5 @@
+precondition(maxFill([[0, 0, 1, 0], [0, 1, 0, 0], [1, 1, 1, 1]], capacity: 1) == 6)
+precondition(maxFill([[0, 0, 1, 1], [0, 0, 0, 0], [1, 1, 1, 1], [0, 1, 1, 1]], capacity: 2) == 5)
+precondition(maxFill([[0, 0, 0], [0, 0, 0]], capacity: 5) == 0)
+precondition(maxFill([[1, 1, 1, 1], [1, 1, 1, 1]], capacity: 2) == 4)
+precondition(maxFill([[1, 1, 1, 1], [1, 1, 1, 1]], capacity: 9) == 2)

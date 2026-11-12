@@ -1,0 +1,8 @@
+precondition(sortArray([1, 5, 2, 3, 4]) == [1, 2, 4, 3, 5])
+precondition(sortArray([-2, -3, -4, -5, -6]) == [-4, -2, -6, -5, -3])
+precondition(sortArray([1, 0, 2, 3, 4]) == [0, 1, 2, 4, 3])
+precondition(sortArray([]) == [])
+precondition(sortArray([2, 5, 77, 4, 5, 3, 5, 7, 2, 3, 4]) == [2, 2, 4, 4, 3, 3, 5, 5, 5, 7, 77])
+precondition(sortArray([3, 6, 44, 12, 32, 5]) == [32, 3, 5, 6, 12, 44])
+precondition(sortArray([2, 4, 8, 16, 32]) == [2, 4, 8, 16, 32])
+precondition(sortArray([2, 4, 8, 16, 32]) == [2, 4, 8, 16, 32])

@@ -1,0 +1,7 @@
+precondition(nextSmallest([1, 2, 3, 4, 5]) == 2)
+precondition(nextSmallest([5, 1, 4, 3, 2]) == 2)
+precondition(nextSmallest([]) == nil)
+precondition(nextSmallest([1, 1]) == nil)
+precondition(nextSmallest([1, 1, 1, 1, 0]) == 1)
+precondition(nextSmallest([1, 1]) == nil)
+precondition(nextSmallest([-35, 34, 12, -45]) == -35)

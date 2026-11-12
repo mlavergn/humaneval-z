@@ -1,0 +1,5 @@
+precondition(closestInteger("10") == 10)
+precondition(closestInteger("14.5") == 15)
+precondition(closestInteger("-15.5") == -16)
+precondition(closestInteger("15.3") == 15)
+precondition(closestInteger("0") == 0)

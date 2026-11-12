@@ -1,0 +1,6 @@
+precondition(isBored("Hello world") == 0)
+precondition(isBored("Is the sky blue?") == 0)
+precondition(isBored("I love It !") == 1)
+precondition(isBored("bIt") == 0)
+precondition(isBored("I feel good today. I will be productive. will kill It") == 2)
+precondition(isBored("You and I are going for a walk") == 0)

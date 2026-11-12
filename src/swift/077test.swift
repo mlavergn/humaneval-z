@@ -1,0 +1,8 @@
+precondition(iscube(1))
+precondition(!iscube(2))
+precondition(iscube(-1))
+precondition(iscube(64))
+precondition(!iscube(180))
+precondition(iscube(1000))
+precondition(iscube(0))
+precondition(!iscube(1729))

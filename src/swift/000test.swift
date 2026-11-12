@@ -1,0 +1,7 @@
+precondition(hasCloseElements([11.0, 2.0, 3.9, 4.0, 5.0, 2.2], threshold: 0.3))
+precondition(!hasCloseElements([1.0, 2.0, 3.9, 4.0, 5.0, 2.2], threshold: 0.05))
+precondition(hasCloseElements([1.0, 2.0, 5.9, 4.0, 5.0], threshold: 0.95))
+precondition(!hasCloseElements([1.0, 2.0, 5.9, 4.0, 5.0], threshold: 0.8))
+precondition(hasCloseElements([1.0, 2.0, 3.0, 4.0, 5.0, 2.0], threshold: 0.1))
+precondition(hasCloseElements([1.1, 2.2, 3.1, 4.1, 5.1], threshold: 1.0))
+precondition(!hasCloseElements([1.1, 2.2, 3.1, 4.1, 5.1], threshold: 0.5))

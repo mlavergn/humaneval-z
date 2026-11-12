@@ -1,0 +1,184 @@
+# Swift review
+
+Check off each task once reviewed. Each task is `NNNtask.md`, `NNNsolution.swift` and `NNNtest.swift`, laid out as in `src/FORMAT.md`; the Swift conventions are in FORMAT.md's language rules.
+
+Status: `scripts/check.py swift` passes 164/164 (Swift 6.4.2 in the `swift:6.4.2` Docker image, debug build, so `precondition` and overflow trap).
+
+## Basis
+
+- Ported from `src/zig/` (semantics, including the Zig deviations from Go noted in `src/zig/REVIEW.md`).
+- Tests come from the Go `test` / `example_test` asserts (C++ for task 95), as `precondition(call == expected)`.
+- Docstrings come from the Zig prompts as `///` comments, with Swift literals and argument labels in the examples.
+- Labels: Zig parameter names in `lowerCamelCase`. The first label is left out when the function name already says it (`isPalindrome(_ text:)`), and both are left out for symmetric pairs (`stringXor(_:_:)`, `greatestCommonDivisor(_:_:)`).
+- Tests: most were translated mechanically from Go's `assert.Equal` lines. Tasks marked ✋ were hand-ported. Random tests use a seeded SplitMix64 generator defined in the test.
+
+## Carry-overs from the Zig review
+
+_Fixes from the Zig review are listed here as they're carried into Swift._
+
+## Tasks
+
+- [ ] 0. `hasCloseElements(_ numbers: [Double], threshold: Double) -> Bool`
+- [ ] 1. `separateParenGroups(_ parenString: String) -> [String]`
+- [ ] 2. `truncateNumber(_ number: Double) -> Double` ✋
+- [ ] 3. `belowZero(operations: [Int]) -> Bool`
+- [ ] 4. `meanAbsoluteDeviation(_ numbers: [Double]) -> Double` ✋
+- [ ] 5. `intersperse(_ numbers: [Int], delimeter: Int) -> [Int]`
+- [ ] 6. `parseNestedParens(_ parenString: String) -> [Int]`
+- [ ] 7. `filterBySubstring(_ strings: [String], substring: String) -> [String]`
+- [ ] 8. `sumProduct(_ numbers: [Int]) -> (Int, Int)`: returns a tuple `(Int, Int)`
+- [ ] 9. `rollingMax(_ numbers: [Int]) -> [Int]`
+- [ ] 10. `makePalindrome(_ string: String) -> String`: `isPalindrome` is provided in the prompt
+- [ ] 11. `stringXor(_ a: String, _ b: String) -> String`
+- [ ] 12. `longest(_ strings: [String]) -> String?`: returns `String?`
+- [ ] 13. `greatestCommonDivisor(_ a: Int, _ b: Int) -> Int`
+- [ ] 14. `allPrefixes(_ string: String) -> [String]`
+- [ ] 15. `stringSequence(_ n: Int) -> String`
+- [ ] 16. `countDistinctCharacters(_ string: String) -> Int`
+- [ ] 17. `parseMusic(_ musicString: String) -> [Int]`
+- [ ] 18. `howManyTimes(_ string: String, substring: String) -> Int`
+- [ ] 19. `sortNumbers(_ numbers: String) -> String`
+- [ ] 20. `findClosestElements(_ numbers: [Double]) -> (Double, Double)`: returns a tuple `(Double, Double)`
+- [ ] 21. `rescaleToUnit(_ numbers: [Double]) -> [Double]`
+- [ ] 22. `filterIntegers(_ values: [Value]) -> [Int]`: `Value` enum (associated values) defined in the prompt; the docstring examples show plain values
+- [ ] 23. `strlen(_ string: String) -> Int`
+- [ ] 24. `largestDivisor(_ n: Int) -> Int`
+- [ ] 25. `factorize(_ n: Int) -> [Int]`
+- [ ] 26. `removeDuplicates(_ numbers: [Int]) -> [Int]`
+- [ ] 27. `flipCase(_ string: String) -> String`
+- [ ] 28. `concatenate(_ strings: [String]) -> String`
+- [ ] 29. `filterByPrefix(_ strings: [String], prefix: String) -> [String]`
+- [ ] 30. `getPositive(_ l: [Int]) -> [Int]`
+- [ ] 31. `isPrime(_ n: Int) -> Bool`
+- [ ] 32. `findZero(_ xs: [Int]) -> Double` ✋: `poly` is provided in the prompt. Test: seeded SplitMix64 generator
+- [ ] 33. `sortThird(_ l: [Int]) -> [Int]` ✋
+- [ ] 34. `unique(_ l: [Int]) -> [Int]`
+- [ ] 35. `maxElement(_ l: [Int]) -> Int`
+- [ ] 36. `fizzBuzz(_ n: Int) -> Int`
+- [ ] 37. `sortEven(_ l: [Int]) -> [Int]` ✋
+- [ ] 38. `decodeCyclic(_ s: String) -> String` ✋: `encodeCyclic` is provided in the prompt. Test: seeded SplitMix64 generator
+- [ ] 39. `primeFib(_ n: Int) -> Int`
+- [ ] 40. `triplesSumToZero(_ l: [Int]) -> Bool`
+- [ ] 41. `carRaceCollision(_ n: Int) -> Int`
+- [ ] 42. `incrList(_ l: [Int]) -> [Int]`
+- [ ] 43. `pairsSumToZero(_ l: [Int]) -> Bool`
+- [ ] 44. `changeBase(_ x: Int, base: Int) -> String` ✋: `String(x, radix: base)`
+- [ ] 45. `triangleArea(a: Double, h: Double) -> Double`
+- [ ] 46. `fib4(_ n: Int) -> Int`
+- [ ] 47. `median(_ l: [Int]) -> Double`
+- [ ] 48. `isPalindrome(_ text: String) -> Bool`
+- [ ] 49. `modp(_ n: Int, p: Int) -> Int`
+- [ ] 50. `decodeShift(_ s: String) -> String` ✋: `encodeShift` is provided in the prompt (semantics from C++, via Zig). Test: seeded SplitMix64 generator
+- [ ] 51. `removeVowels(_ text: String) -> String`
+- [ ] 52. `belowThreshold(_ l: [Int], t: Int) -> Bool`
+- [ ] 53. `add(x: Int, y: Int) -> Int` ✋: test: seeded SplitMix64 generator for the random cases
+- [ ] 54. `sameChars(_ s0: String, _ s1: String) -> Bool`
+- [ ] 55. `fib(_ n: Int) -> Int`
+- [ ] 56. `correctBracketing(_ brackets: String) -> Bool`
+- [ ] 57. `monotonic(_ l: [Int]) -> Bool`
+- [ ] 58. `common(_ l1: [Int], _ l2: [Int]) -> [Int]`
+- [ ] 59. `largestPrimeFactor(_ n: Int) -> Int`
+- [ ] 60. `sumToN(_ n: Int) -> Int`
+- [ ] 61. `correctBracketing(_ brackets: String) -> Bool`
+- [ ] 62. `derivative(_ xs: [Int]) -> [Int]`
+- [ ] 63. `fibfib(_ n: Int) -> Int`
+- [ ] 64. `vowelsCount(_ s: String) -> Int`
+- [ ] 65. `circularShift(_ x: Int, shift: Int) -> String`
+- [ ] 66. `digitsum(_ s: String) -> Int`
+- [ ] 67. `fruitDistribution(_ s: String, n: Int) -> Int`
+- [ ] 68. `pluck(_ arr: [Int]) -> (Int, Int)?`: returns `(Int, Int)?`; tests unwrap with `!` because optional tuples aren't Equatable
+- [ ] 69. `search(_ lst: [Int]) -> Int`
+- [ ] 70. `strangeSortList(_ lst: [Int]) -> [Int]`
+- [ ] 71. `triangleArea(a: Double, b: Double, c: Double) -> Double`
+- [ ] 72. `willItFly(_ q: [Int], w: Int) -> Bool`
+- [ ] 73. `smallestChange(_ arr: [Int]) -> Int`
+- [ ] 74. `totalMatch(_ lst1: [String], _ lst2: [String]) -> [String]`
+- [ ] 75. `isMultiplyPrime(_ a: Int) -> Bool`
+- [ ] 76. `isSimplePower(_ x: Int, n: Int) -> Bool`
+- [ ] 77. `iscube(_ a: Int) -> Bool`
+- [ ] 78. `hexKey(_ num: String) -> Int`
+- [ ] 79. `decimalToBinary(_ decimal: Int) -> String`
+- [ ] 80. `isHappy(_ s: String) -> Bool`
+- [ ] 81. `numericalLetterGrade(_ grades: [Double]) -> [String]`
+- [ ] 82. `primeLength(_ string: String) -> Bool`
+- [ ] 83. `startsOneEnds(_ n: Int) -> Int`
+- [ ] 84. `solve(_ n: Int) -> String`
+- [ ] 85. `add(_ lst: [Int]) -> Int`
+- [ ] 86. `antiShuffle(_ s: String) -> String`
+- [ ] 87. `getRow(_ lst: [[Int]], x: Int) -> [(row: Int, column: Int)]` ✋: returns `[(row: Int, column: Int)]`; the test compares element-wise (arrays of tuples aren't Equatable)
+- [ ] 88. `sortArray(_ array: [Int]) -> [Int]`
+- [ ] 89. `encrypt(_ s: String) -> String`
+- [ ] 90. `nextSmallest(_ lst: [Int]) -> Int?`: returns `Int?`
+- [ ] 91. `isBored(_ s: String) -> Int`
+- [ ] 92. `anyInt(_ x: Value, _ y: Value, _ z: Value) -> Bool`: `Value` enum for the arguments
+- [ ] 93. `encode(_ message: String) -> String`
+- [ ] 94. `skjkasdkd(_ lst: [Int]) -> Int`
+- [ ] 95. `checkDictCase(_ dict: [String: String]) -> Bool` ✋: takes `[String: String]` (Swift has native dictionaries); test cases from C++
+- [ ] 96. `countUpTo(_ n: Int) -> [Int]`
+- [ ] 97. `multiply(_ a: Int, _ b: Int) -> Int`
+- [ ] 98. `countUpper(_ s: String) -> Int`
+- [ ] 99. `closestInteger(_ value: String) -> Int`
+- [ ] 100. `makeAPile(_ n: Int) -> [Int]`
+- [ ] 101. `wordsString(_ s: String) -> [String]`
+- [ ] 102. `chooseNum(_ x: Int, _ y: Int) -> Int`
+- [ ] 103. `roundedAvg(_ n: Int, _ m: Int) -> String?`: returns `String?` (nil where Go returns -1)
+- [ ] 104. `uniqueDigits(_ x: [Int]) -> [Int]`
+- [ ] 105. `byLength(_ arr: [Int]) -> [String]`
+- [ ] 106. `f(_ n: Int) -> [Int]`
+- [ ] 107. `evenOddPalindrome(_ n: Int) -> (Int, Int)`: returns a tuple `(Int, Int)`
+- [ ] 108. `countNums(_ arr: [Int]) -> Int`
+- [ ] 109. `moveOneBall(_ arr: [Int]) -> Bool`
+- [ ] 110. `exchange(_ lst1: [Int], _ lst2: [Int]) -> String`
+- [ ] 111. `histogram(_ test: String) -> [Character: Int]`: returns `[Character: Int]` (a native dictionary, as in Go)
+- [ ] 112. `reverseDelete(_ s: String, c: String) -> (String, Bool)`: returns a tuple `(String, Bool)`
+- [ ] 113. `oddCount(_ lst: [String]) -> [String]`
+- [ ] 114. `minsubarraysum(_ nums: [Int]) -> Int`
+- [ ] 115. `maxFill(_ grid: [[Int]], capacity: Int) -> Int`
+- [ ] 116. `sortArray(_ arr: [Int]) -> [Int]`
+- [ ] 117. `selectWords(_ s: String, n: Int) -> [String]`
+- [ ] 118. `getClosestVowel(_ word: String) -> String`
+- [ ] 119. `matchParens(_ lst: [String]) -> String`
+- [ ] 120. `maximum(_ arr: [Int], k: Int) -> [Int]`
+- [ ] 121. `solution(_ lst: [Int]) -> Int`
+- [ ] 122. `addElements(_ arr: [Int], k: Int) -> Int`
+- [ ] 123. `getOddCollatz(_ n: Int) -> [Int]`
+- [ ] 124. `validDate(_ date: String) -> Bool`
+- [ ] 125. `splitWords(_ txt: String) -> SplitResult`: `SplitResult` enum (`.words` / `.count`) defined in the prompt
+- [ ] 126. `isSorted(_ lst: [Int]) -> Bool`
+- [ ] 127. `intersection(_ interval1: (Int, Int), _ interval2: (Int, Int)) -> String`: intervals are tuples `(Int, Int)`
+- [ ] 128. `prodSigns(_ arr: [Int]) -> Int?`: returns `Int?`
+- [ ] 129. `minpath(_ grid: [[Int]], k: Int) -> [Int]`
+- [ ] 130. `tri(_ n: Int) -> [Double]`
+- [ ] 131. `digits(_ n: Int) -> Int`
+- [ ] 132. `isNested(_ string: String) -> Bool`
+- [ ] 133. `sumSquares(_ lst: [Double]) -> Int`
+- [ ] 134. `checkIfLastCharIsALetter(_ txt: String) -> Bool`
+- [ ] 135. `canArrange(_ arr: [Int]) -> Int`
+- [ ] 136. `largestSmallestIntegers(_ lst: [Int]) -> (Int?, Int?)`: returns `(Int?, Int?)`
+- [ ] 137. `compareOne(_ a: Value, _ b: Value) -> Value?`: `Value` enum; returns `Value?`
+- [ ] 138. `isEqualToSumEven(_ n: Int) -> Bool`
+- [ ] 139. `specialFactorial(_ n: Int) -> Int`
+- [ ] 140. `fixSpaces(_ text: String) -> String`
+- [ ] 141. `fileNameCheck(_ fileName: String) -> String`
+- [ ] 142. `sumSquares(_ lst: [Int]) -> Int`
+- [ ] 143. `wordsInSentence(_ sentence: String) -> String`
+- [ ] 144. `simplify(_ x: String, n: String) -> Bool`
+- [ ] 145. `orderByPoints(_ nums: [Int]) -> [Int]`
+- [ ] 146. `specialfilter(_ nums: [Int]) -> Int`
+- [ ] 147. `getMaxTriples(_ n: Int) -> Int`
+- [ ] 148. `bf(_ planet1: String, _ planet2: String) -> [String]`
+- [ ] 149. `sortedListSum(_ lst: [String]) -> [String]`
+- [ ] 150. `xOrY(_ n: Int, x: Int, y: Int) -> Int`
+- [ ] 151. `doubleTheDifference(_ lst: [Double]) -> Int` ✋
+- [ ] 152. `compare(_ game: [Int], _ guess: [Int]) -> [Int]`
+- [ ] 153. `strongestExtension(className: String, extensions: [String]) -> String`: labelled `strongestExtension(className:extensions:)`: the name describes the second argument, not the first
+- [ ] 154. `cycpatternCheck(_ a: String, _ b: String) -> Bool`
+- [ ] 155. `evenOddCount(_ num: Int) -> (Int, Int)`: returns a tuple `(Int, Int)`
+- [ ] 156. `intToMiniRoman(_ number: Int) -> String`
+- [ ] 157. `rightAngleTriangle(a: Int, b: Int, c: Int) -> Bool`
+- [ ] 158. `findMax(_ words: [String]) -> String`
+- [ ] 159. `eat(number: Int, need: Int, remaining: Int) -> (Int, Int)`: returns a tuple `(Int, Int)`; all three labels kept
+- [ ] 160. `doAlgebra(operator operators: [String], operand: [Int]) -> Int`: labels `operator:` / `operand:` (Zig names; `operator` is a keyword, so the internal name is `operators`). An unknown operator is `fatalError`
+- [ ] 161. `solve(_ s: String) -> String`
+- [ ] 162. `stringToMd5(_ text: String) -> String?`: implements MD5 itself (helper `md5` after the function), because Foundation on Linux has no digest API
+- [ ] 163. `generateIntegers(_ a: Int, _ b: Int) -> [Int]`

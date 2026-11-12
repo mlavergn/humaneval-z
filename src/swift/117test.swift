@@ -1,0 +1,7 @@
+precondition(selectWords("Mary had a little lamb", n: 4) == ["little"])
+precondition(selectWords("Mary had a little lamb", n: 3) == ["Mary", "lamb"])
+precondition(selectWords("simple white space", n: 2) == [])
+precondition(selectWords("Hello world", n: 4) == ["world"])
+precondition(selectWords("Uncle sam", n: 3) == ["Uncle"])
+precondition(selectWords("", n: 4) == [])
+precondition(selectWords("a b c d e f", n: 1) == ["b", "c", "d", "f"])

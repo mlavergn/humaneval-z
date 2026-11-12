@@ -1,0 +1,6 @@
+precondition(wordsString("Hi, my name is John") == ["Hi", "my", "name", "is", "John"])
+precondition(wordsString("One, two, three, four, five, six") == ["One", "two", "three", "four", "five", "six"])
+precondition(wordsString("") == [])
+precondition(wordsString("Hi, my name") == ["Hi", "my", "name"])
+precondition(wordsString("One,, two, three, four, five, six,") == ["One", "two", "three", "four", "five", "six"])
+precondition(wordsString("ahmed     , gamal") == ["ahmed", "gamal"])

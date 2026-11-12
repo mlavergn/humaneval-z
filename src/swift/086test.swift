@@ -1,0 +1,7 @@
+precondition(antiShuffle("Hi") == "Hi")
+precondition(antiShuffle("hello") == "ehllo")
+precondition(antiShuffle("number") == "bemnru")
+precondition(antiShuffle("abcd") == "abcd")
+precondition(antiShuffle("Hello World!!!") == "Hello !!!Wdlor")
+precondition(antiShuffle("") == "")
+precondition(antiShuffle("Hi. My name is Mister Robot. How are you?") == ".Hi My aemn is Meirst .Rboot How aer ?ouy")

@@ -1,0 +1,6 @@
+precondition(eat(number: 5, need: 6, remaining: 10) == (11, 4))
+precondition(eat(number: 4, need: 8, remaining: 9) == (12, 1))
+precondition(eat(number: 1, need: 10, remaining: 10) == (11, 0))
+precondition(eat(number: 2, need: 11, remaining: 5) == (7, 0))
+precondition(eat(number: 4, need: 5, remaining: 7) == (9, 2))
+precondition(eat(number: 4, need: 5, remaining: 1) == (5, 0))

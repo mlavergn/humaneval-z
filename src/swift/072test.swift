@@ -1,0 +1,6 @@
+precondition(willItFly([3, 2, 3], w: 9))
+precondition(!willItFly([1, 2], w: 5))
+precondition(willItFly([3], w: 5))
+precondition(!willItFly([3, 2, 3], w: 1))
+precondition(!willItFly([1, 2, 3], w: 6))
+precondition(willItFly([5], w: 5))

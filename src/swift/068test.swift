@@ -1,0 +1,8 @@
+precondition(pluck([4, 2, 3])! == (2, 1))
+precondition(pluck([1, 2, 3])! == (2, 1))
+precondition(pluck([]) == nil)
+precondition(pluck([5, 0, 3, 0, 4, 2])! == (0, 1))
+precondition(pluck([1, 2, 3, 0, 5, 3])! == (0, 3))
+precondition(pluck([5, 4, 8, 4, 8])! == (4, 1))
+precondition(pluck([7, 6, 7, 1])! == (6, 1))
+precondition(pluck([7, 9, 7, 1]) == nil)

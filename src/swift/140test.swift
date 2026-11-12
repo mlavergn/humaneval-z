@@ -1,0 +1,5 @@
+precondition(fixSpaces("Example") == "Example")
+precondition(fixSpaces("Mudasir Hanif ") == "Mudasir_Hanif_")
+precondition(fixSpaces("Yellow Yellow  Dirty  Fellow") == "Yellow_Yellow__Dirty__Fellow")
+precondition(fixSpaces("Exa   mple") == "Exa-mple")
+precondition(fixSpaces("   Exa 1 2 2 mple") == "-Exa_1_2_2_mple")

@@ -1,0 +1,5 @@
+precondition(byLength([2, 1, 1, 4, 5, 8, 2, 3]) == ["Eight", "Five", "Four", "Three", "Two", "Two", "One", "One"])
+precondition(byLength([]) == [])
+precondition(byLength([1, -1, 55]) == ["One"])
+precondition(byLength([1, -1, 3, 2]) == ["Three", "Two", "One"])
+precondition(byLength([9, 4, 8]) == ["Nine", "Eight", "Four"])

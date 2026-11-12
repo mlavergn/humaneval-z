@@ -1,0 +1,5 @@
+precondition(circularShift(100, shift: 2) == "001")
+precondition(circularShift(12, shift: 2) == "12")
+precondition(circularShift(97, shift: 8) == "79")
+precondition(circularShift(12, shift: 1) == "21")
+precondition(circularShift(11, shift: 101) == "11")

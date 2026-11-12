@@ -1,0 +1,5 @@
+precondition(carRaceCollision(2) == 4)
+precondition(carRaceCollision(3) == 9)
+precondition(carRaceCollision(4) == 16)
+precondition(carRaceCollision(8) == 64)
+precondition(carRaceCollision(10) == 100)

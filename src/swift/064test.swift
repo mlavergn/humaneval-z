@@ -1,0 +1,7 @@
+precondition(vowelsCount("abcde") == 2)
+precondition(vowelsCount("Alone") == 3)
+precondition(vowelsCount("key") == 2)
+precondition(vowelsCount("bye") == 1)
+precondition(vowelsCount("keY") == 2)
+precondition(vowelsCount("bYe") == 1)
+precondition(vowelsCount("ACEDY") == 3)

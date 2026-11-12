@@ -1,0 +1,5 @@
+precondition(makeAPile(3) == [3, 5, 7])
+precondition(makeAPile(4) == [4, 6, 8, 10])
+precondition(makeAPile(5) == [5, 7, 9, 11, 13])
+precondition(makeAPile(6) == [6, 8, 10, 12, 14, 16])
+precondition(makeAPile(8) == [8, 10, 12, 14, 16, 18, 20, 22])

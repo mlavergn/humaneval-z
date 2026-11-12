@@ -1,0 +1,7 @@
+precondition(specialfilter([5, -2, 1, -5]) == 0)
+precondition(specialfilter([15, -73, 14, -15]) == 1)
+precondition(specialfilter([33, -2, -3, 45, 21, 109]) == 2)
+precondition(specialfilter([43, -12, 93, 125, 121, 109]) == 4)
+precondition(specialfilter([71, -2, -33, 75, 21, 19]) == 3)
+precondition(specialfilter([1]) == 0)
+precondition(specialfilter([]) == 0)

@@ -1,0 +1,5 @@
+precondition(encode("TEST") == "tgst")
+precondition(encode("Mudasir") == "mWDCSKR")
+precondition(encode("YES") == "ygs")
+precondition(encode("This is a message") == "tHKS KS C MGSSCGG")
+precondition(encode("I DoNt KnOw WhAt tO WrItE") == "k dQnT kNqW wHcT Tq wRkTg")

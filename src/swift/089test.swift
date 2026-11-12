@@ -1,0 +1,8 @@
+precondition(encrypt("hi") == "lm")
+precondition(encrypt("asdfghjkl") == "ewhjklnop")
+precondition(encrypt("gf") == "kj")
+precondition(encrypt("et") == "ix")
+precondition(encrypt("faewfawefaewg") == "jeiajeaijeiak")
+precondition(encrypt("hellomyfriend") == "lippsqcjvmirh")
+precondition(encrypt("dxzdlmnilfuhmilufhlihufnmlimnufhlimnufhfucufh") == "hbdhpqrmpjylqmpyjlpmlyjrqpmqryjlpmqryjljygyjl")
+precondition(encrypt("a") == "e")

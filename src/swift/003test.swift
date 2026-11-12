@@ -1,0 +1,6 @@
+precondition(!belowZero(operations: []))
+precondition(!belowZero(operations: [1, 2, -3, 1, 2, -3]))
+precondition(belowZero(operations: [1, 2, -4, 5, 6]))
+precondition(!belowZero(operations: [1, -1, 2, -2, 5, -5, 4, -4]))
+precondition(belowZero(operations: [1, -1, 2, -2, 5, -5, 4, -5]))
+precondition(belowZero(operations: [1, -2, 2, -2, 5, -5, 4, -4]))

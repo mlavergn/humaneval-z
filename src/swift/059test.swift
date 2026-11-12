@@ -1,0 +1,5 @@
+precondition(largestPrimeFactor(15) == 5)
+precondition(largestPrimeFactor(27) == 3)
+precondition(largestPrimeFactor(63) == 7)
+precondition(largestPrimeFactor(330) == 11)
+precondition(largestPrimeFactor(13195) == 29)

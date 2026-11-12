@@ -1,0 +1,8 @@
+precondition(monotonic([1, 2, 4, 10]))
+precondition(monotonic([1, 2, 4, 20]))
+precondition(!monotonic([1, 20, 4, 10]))
+precondition(monotonic([4, 1, 0, -10]))
+precondition(monotonic([4, 1, 1, 0]))
+precondition(!monotonic([1, 2, 3, 2, 5, 60]))
+precondition(monotonic([1, 2, 3, 4, 5, 60]))
+precondition(monotonic([9, 9, 9, 9]))

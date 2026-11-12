@@ -22,7 +22,7 @@ import datasets
 
 _DESCRIPTION = """
 HumanEval-X is a benchmark for the evaluation of the multilingual ability of code generative models. \
-It consists of 820 high-quality human-crafted data samples (each with test cases) in Python, C++, Java, JavaScript, and Go, and can be used for various tasks.
+It consists of 820 high-quality human-crafted data samples (each with test cases) in Python, C++, Java, JavaScript, and Go, plus 164-sample Zig, C and Swift ports, and can be used for various tasks.
 """
 
 _HOMEPAGE = "https://github.com/THUDM/CodeGeeX"
@@ -82,6 +82,22 @@ class HumanEvalX(datasets.GeneratorBasedBuilder):
             description="JavaScript HumanEval",
             features=["task_id", "prompt", "declaration", "canonical_solution", "test", "example_test"]
         ),
+
+        HumanEvalXConfig(
+            name="zig",
+            description="Zig HumanEval",
+            features=["task_id", "prompt", "declaration", "canonical_solution", "test", "example_test"]
+        ),
+        HumanEvalXConfig(
+            name="c",
+            description="C HumanEval",
+            features=["task_id", "prompt", "declaration", "canonical_solution", "test", "example_test"]
+        ),
+        HumanEvalXConfig(
+            name="swift",
+            description="Swift HumanEval",
+            features=["task_id", "prompt", "declaration", "canonical_solution", "test", "example_test"]
+        ),
         ]
     DEFAULT_CONFIG_NAME = "python"
 
@@ -112,6 +128,15 @@ class HumanEvalX(datasets.GeneratorBasedBuilder):
             return split_generator(dl_manager, self.config.name)
 
         elif self.config.name == "js":
+            return split_generator(dl_manager, self.config.name)
+
+        elif self.config.name == "zig":
+            return split_generator(dl_manager, self.config.name)
+
+        elif self.config.name == "c":
+            return split_generator(dl_manager, self.config.name)
+
+        elif self.config.name == "swift":
             return split_generator(dl_manager, self.config.name)
            
     def _generate_examples(self, filepath):

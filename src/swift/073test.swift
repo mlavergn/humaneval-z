@@ -1,0 +1,8 @@
+precondition(smallestChange([1, 2, 3, 5, 4, 7, 9, 6]) == 4)
+precondition(smallestChange([1, 2, 3, 4, 3, 2, 2]) == 1)
+precondition(smallestChange([1, 4, 2]) == 1)
+precondition(smallestChange([1, 4, 4, 2]) == 1)
+precondition(smallestChange([1, 2, 3, 2, 1]) == 0)
+precondition(smallestChange([3, 1, 1, 3]) == 0)
+precondition(smallestChange([1]) == 0)
+precondition(smallestChange([0, 1]) == 1)

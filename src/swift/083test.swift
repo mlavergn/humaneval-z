@@ -1,0 +1,5 @@
+precondition(startsOneEnds(1) == 1)
+precondition(startsOneEnds(2) == 18)
+precondition(startsOneEnds(3) == 180)
+precondition(startsOneEnds(4) == 1800)
+precondition(startsOneEnds(5) == 18000)

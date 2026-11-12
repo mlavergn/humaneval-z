@@ -1,0 +1,8 @@
+precondition(countNums([]) == 0)
+precondition(countNums([-1, -2, 0]) == 0)
+precondition(countNums([1, 1, 2, -2, 3, 4, 5]) == 6)
+precondition(countNums([1, 6, 9, -6, 0, 1, 5]) == 5)
+precondition(countNums([1, 100, 98, -7, 1, -1]) == 4)
+precondition(countNums([12, 23, 34, -45, -56, 0]) == 5)
+precondition(countNums([0, 1]) == 1)
+precondition(countNums([1]) == 1)

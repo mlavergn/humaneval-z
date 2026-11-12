@@ -1,0 +1,7 @@
+precondition(removeVowels("") == "")
+precondition(removeVowels("abcdef\nghijklm") == "bcdf\nghjklm")
+precondition(removeVowels("fedcba") == "fdcb")
+precondition(removeVowels("eeeee") == "")
+precondition(removeVowels("acBAA") == "cB")
+precondition(removeVowels("EcBOO") == "cB")
+precondition(removeVowels("ybcd") == "ybcd")

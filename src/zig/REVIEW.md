@@ -1,0 +1,184 @@
+# Zig review
+
+Check off each task once reviewed. Each task is `NNNtask.md` (prompt, declaration, example_test), `NNNsolution.zig` and `NNNtest.zig`, laid out as in `src/FORMAT.md`.
+
+Status: `scripts/check.py zig` passes 164/164; every task's `test` and `example_test` builds and passes.
+
+## Conventions
+
+- Go `int` → `i64` (lengths/indices `usize`), `float64` → `f64`, `string` → `[]const u8`, `[]T` input → `[]const T`. Names are `camelCase`; functions are `pub fn`.
+- Allocation: a function that allocates takes `allocator: std.mem.Allocator` as its first parameter and returns an error union (`![]T`). Tests use `std.testing.allocator`, which fails the test on any leak.
+- **Ownership is in the type:** `[]u8` / `[]i64` / `[][]u8` are freshly allocated, and the caller frees them (inner slices too).
+- `[]const u8` results borrow from the input or are static, so they're never freed. For `[][]const u8`, only the outer slice is freed.
+- Go `nil` returns → optionals (`?T`). Go `interface{}` → a tagged union (`Value`, `SplitResult`), defined in the prompt.
+- No `errdefer` cleanup on OOM paths, matching the Go/C++ references' level of detail.
+- Port source: Go, except tasks 50 and 95 (C++), per `src/BROKEN.md`.
+- Docstrings come from Go, with names, literals and `>>>` examples rewritten in Zig syntax.
+- Tests: most were translated mechanically from Go's `assert.Equal` lines. Tasks marked ✋ were hand-ported (loops, random input, helper closures, or types the translator can't express).
+
+## Tasks
+
+- [ ] 0. `hasCloseElements`
+- [ ] 1. `separateParenGroups`
+- [ ] 2. `truncateNumber` ✋
+- [ ] 3. `belowZero`
+- [ ] 4. `meanAbsoluteDeviation` ✋
+- [ ] 5. `intersperse`
+- [ ] 6. `parseNestedParens`
+- [ ] 7. `filterBySubstring`
+- [ ] 8. `sumProduct`
+- [ ] 9. `rollingMax`
+- [ ] 10. `makePalindrome`
+- [ ] 11. `stringXor`: char-wise XOR; assumes equal-length inputs (Go XORs as int32, so inputs over 31 bits overflow)
+- [ ] 12. `longest`: returns `?[]const u8` (null for empty input)
+- [ ] 13. `greatestCommonDivisor`: Euclid's algorithm; Go's trial-division loop is wrong when b divides a (e.g. gcd(10, 5) = 1)
+- [ ] 14. `allPrefixes`
+- [ ] 15. `stringSequence`
+- [ ] 16. `countDistinctCharacters`
+- [ ] 17. `parseMusic`
+- [ ] 18. `howManyTimes`
+- [ ] 19. `sortNumbers`
+- [ ] 20. `findClosestElements`: drops Go's dead `distance == MinInt64` branch
+- [ ] 21. `rescaleToUnit`: returns a new slice; Go rescales the input in place
+- [ ] 22. `filterIntegers`: `Value` tagged union for Go's `interface{}`. Test: Go rune literals ('c') become one-char strings
+- [ ] 23. `strlen`
+- [ ] 24. `largestDivisor`
+- [ ] 25. `factorize`: standard trial division (`i * i <= n`)
+- [ ] 26. `removeDuplicates`
+- [ ] 27. `flipCase`
+- [ ] 28. `concatenate`
+- [ ] 29. `filterByPrefix`
+- [ ] 30. `getPositive`
+- [ ] 31. `isPrime`
+- [ ] 32. `findZero` ✋: test: random polynomials use a fixed seed (42), as in Go
+- [ ] 33. `sortThird` ✋: returns a new slice; Go sorts the input in place
+- [ ] 34. `unique`
+- [ ] 35. `maxElement`
+- [ ] 36. `fizzBuzz`
+- [ ] 37. `sortEven` ✋: returns a new slice; Go sorts the input in place
+- [ ] 38. `decodeCyclic` ✋: test: fixed seed (42) instead of Go's time-based seed
+- [ ] 39. `primeFib`
+- [ ] 40. `triplesSumToZero`
+- [ ] 41. `carRaceCollision`
+- [ ] 42. `incrList`: returns a new slice; Go increments the input in place
+- [ ] 43. `pairsSumToZero`: simplified: Go's `seen` map never changes the result
+- [ ] 44. `changeBase` ✋
+- [ ] 45. `triangleArea`
+- [ ] 46. `fib4`: iterative; Go's recursion is exponential
+- [ ] 47. `median`
+- [ ] 48. `isPalindrome`
+- [ ] 49. `modp`
+- [ ] 50. `decodeShift` ✋: **ported from C++** (solution and test): Go's EncodeShift/DecodeShift return the input unchanged. Test: fixed seed (42)
+- [ ] 51. `removeVowels`
+- [ ] 52. `belowThreshold`
+- [ ] 53. `add` ✋: test: fixed seed (42) for the random cases
+- [ ] 54. `sameChars`
+- [ ] 55. `fib`
+- [ ] 56. `correctBracketing`
+- [ ] 57. `monotonic`: true for length <= 1 (Go returns false); matches C++ and the spec
+- [ ] 58. `common`
+- [ ] 59. `largestPrimeFactor`: trial division on n; Go tests every j <= n
+- [ ] 60. `sumToN`: closed form n(n+1)/2
+- [ ] 61. `correctBracketing`
+- [ ] 62. `derivative`
+- [ ] 63. `fibfib`: iterative; Go's recursion is exponential
+- [ ] 64. `vowelsCount`: empty string returns 0 (Go panics)
+- [ ] 65. `circularShift`
+- [ ] 66. `digitsum`
+- [ ] 67. `fruitDistribution`
+- [ ] 68. `pluck`: returns `?[2]i64` (null where Go returns an empty slice)
+- [ ] 69. `search`
+- [ ] 70. `strangeSortList`
+- [ ] 71. `triangleArea`: returns f64 -1 for an invalid triangle (Go returns int -1 or float64)
+- [ ] 72. `willItFly`
+- [ ] 73. `smallestChange`: compares the first half against the second half; same result as Go's in-place mutation
+- [ ] 74. `totalMatch`: returns one of the inputs (borrowed, nothing to free)
+- [ ] 75. `isMultiplyPrime`
+- [ ] 76. `isSimplePower`: guards n == 0 (Go would divide by zero)
+- [ ] 77. `iscube`
+- [ ] 78. `hexKey`
+- [ ] 79. `decimalToBinary`
+- [ ] 80. `isHappy`
+- [ ] 81. `numericalLetterGrade`
+- [ ] 82. `primeLength`
+- [ ] 83. `startsOneEnds`
+- [ ] 84. `solve`
+- [ ] 85. `add`
+- [ ] 86. `antiShuffle`
+- [ ] 87. `getRow`
+- [ ] 88. `sortArray`
+- [ ] 89. `encrypt`
+- [ ] 90. `nextSmallest` ✋: returns `!?i64` (null where Go returns nil). Test: Go's `int(math.Pow(0, 0))` written as 1
+- [ ] 91. `isBored`
+- [ ] 92. `anyInt` ✋: `Value` tagged union for `interface{}`, so 3.0 (float) and 3 (int) differ, as in Go
+- [ ] 93. `encode`
+- [ ] 94. `skjkasdkd`: isPrime is false for n < 2 (Go treats 0 and 1 as prime)
+- [ ] 95. `checkDictCase` ✋: **ported from C++** (solution and test; Go's version is flaky). The dict is a slice of { key, value } string pairs; the docstring's `8:` key example can't be expressed
+- [ ] 96. `countUpTo`
+- [ ] 97. `multiply`
+- [ ] 98. `countUpper`
+- [ ] 99. `closestInteger`: parseFloat + `@round` (which rounds half away from zero); Go's trailing-zero stripping isn't needed
+- [ ] 100. `makeAPile`
+- [ ] 101. `wordsString`
+- [ ] 102. `chooseNum`
+- [ ] 103. `roundedAvg`: returns `!?[]u8`: null where Go returns -1
+- [ ] 104. `uniqueDigits`
+- [ ] 105. `byLength`
+- [ ] 106. `f`
+- [ ] 107. `evenOddPalindrome`
+- [ ] 108. `countNums` ✋: test: Go's `-0` and `int(math.Pow(1, 0))` written as 0 and 1
+- [ ] 109. `moveOneBall`: rotates from the true minimum; Go compares the index to the value (`i < min_value`), which is a bug
+- [ ] 110. `exchange`
+- [ ] 111. `histogram` ✋: returns `[]LetterCount` sorted by letter instead of a map; counts words by their first letter
+- [ ] 112. `reverseDelete` ✋: returns a `ReverseDeleteResult` struct instead of `[2]interface{}`
+- [ ] 113. `oddCount`
+- [ ] 114. `minsubarraysum`
+- [ ] 115. `maxFill`
+- [ ] 116. `sortArray`: sorts by popcount of |x|, then value (same as Go's `%b` on negatives)
+- [ ] 117. `selectWords`
+- [ ] 118. `getClosestVowel`: returns a 1-char slice of the input, or "" (nothing to free)
+- [ ] 119. `matchParens`
+- [ ] 120. `maximum`
+- [ ] 121. `solution`
+- [ ] 122. `addElements`
+- [ ] 123. `getOddCollatz`
+- [ ] 124. `validDate`: correct per-month day limits; Go's `a && b || c` precedence bug rejects any day > 29
+- [ ] 125. `splitWords` ✋: `SplitResult` union (words or count) instead of `interface{}`
+- [ ] 126. `isSorted`
+- [ ] 127. `intersection`
+- [ ] 128. `prodSigns`: returns `?i64` (null for empty input)
+- [ ] 129. `minpath`
+- [ ] 130. `tri`
+- [ ] 131. `digits`
+- [ ] 132. `isNested`
+- [ ] 133. `sumSquares`
+- [ ] 134. `checkIfLastCharIsALetter`
+- [ ] 135. `canArrange`
+- [ ] 136. `largestSmallestIntegers`: returns `[2]?i64`
+- [ ] 137. `compareOne` ✋: `Value` tagged union for `interface{}`; returns `?Value`
+- [ ] 138. `isEqualToSumEven`
+- [ ] 139. `specialFactorial`
+- [ ] 140. `fixSpaces`
+- [ ] 141. `fileNameCheck`
+- [ ] 142. `sumSquares`
+- [ ] 143. `wordsInSentence`
+- [ ] 144. `simplify`
+- [ ] 145. `orderByPoints`
+- [ ] 146. `specialfilter`
+- [ ] 147. `getMaxTriples`
+- [ ] 148. `bf`: returns a slice of a static table (nothing to free); the table follows the function in the solution
+- [ ] 149. `sortedListSum`
+- [ ] 150. `xOrY`
+- [ ] 151. `doubleTheDifference` ✋: test: Go's loop over -99..99 rebuilt as a fixed array
+- [ ] 152. `compare`
+- [ ] 153. `strongestExtension`
+- [ ] 154. `cycpatternCheck`
+- [ ] 155. `evenOddCount`
+- [ ] 156. `intToMiniRoman`
+- [ ] 157. `rightAngleTriangle`
+- [ ] 158. `findMax`
+- [ ] 159. `eat`
+- [ ] 160. `doAlgebra`: returns `error.UnknownOperator` for an unrecognised operator
+- [ ] 161. `solve`
+- [ ] 162. `stringToMd5`: returns `!?[]u8` (null for empty text)
+- [ ] 163. `generateIntegers`

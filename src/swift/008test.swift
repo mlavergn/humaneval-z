@@ -1,0 +1,5 @@
+precondition(sumProduct([]) == (0, 1))
+precondition(sumProduct([1, 1, 1]) == (3, 1))
+precondition(sumProduct([100, 0]) == (100, 0))
+precondition(sumProduct([3, 5, 7]) == (15, 105))
+precondition(sumProduct([10]) == (10, 10))

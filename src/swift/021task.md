@@ -1,0 +1,29 @@
+## task_id
+
+```
+Swift/21
+```
+
+## prompt
+
+```swift
+import Foundation
+
+/// Given list of numbers (of at least two elements), apply a linear transform to that list,
+/// such that the smallest number will become 0 and the largest will become 1
+/// >>> rescaleToUnit([1.0, 2.0, 3.0, 4.0, 5.0])
+/// [0.0, 0.25, 0.5, 0.75, 1.0]
+func rescaleToUnit(_ numbers: [Double]) -> [Double] {
+```
+
+## declaration
+
+```swift
+func rescaleToUnit(_ numbers: [Double]) -> [Double] {
+```
+
+## example_test
+
+```swift
+precondition(rescaleToUnit([1.0, 2.0, 3.0, 4.0, 5.0]) == [0.0, 0.25, 0.5, 0.75, 1.0])
+```

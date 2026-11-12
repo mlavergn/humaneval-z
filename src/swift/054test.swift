@@ -1,0 +1,7 @@
+precondition(sameChars("eabcdzzzz", "dddzzzzzzzddeddabc"))
+precondition(sameChars("abcd", "dddddddabc"))
+precondition(sameChars("dddddddabc", "abcd"))
+precondition(!sameChars("eabcd", "dddddddabc"))
+precondition(!sameChars("abcd", "dddddddabcf"))
+precondition(!sameChars("eabcdzzzz", "dddzzzzzzzddddabc"))
+precondition(!sameChars("aabb", "aaccc"))

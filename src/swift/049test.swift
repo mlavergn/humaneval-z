@@ -1,0 +1,7 @@
+precondition(modp(3, p: 5) == 3)
+precondition(modp(1101, p: 101) == 2)
+precondition(modp(0, p: 101) == 1)
+precondition(modp(3, p: 11) == 8)
+precondition(modp(100, p: 101) == 1)
+precondition(modp(30, p: 5) == 4)
+precondition(modp(31, p: 5) == 3)

@@ -1,0 +1,5 @@
+precondition(solve(1000) == "1")
+precondition(solve(150) == "110")
+precondition(solve(147) == "1100")
+precondition(solve(333) == "1001")
+precondition(solve(963) == "10010")

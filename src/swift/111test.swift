@@ -1,0 +1,7 @@
+precondition(histogram("a b b a") == ["a": 2, "b": 2])
+precondition(histogram("a b c a b") == ["a": 2, "b": 2])
+precondition(histogram("a b c d g") == ["a": 1, "b": 1, "c": 1, "d": 1, "g": 1])
+precondition(histogram("r t g") == ["r": 1, "t": 1, "g": 1])
+precondition(histogram("b b b b a") == ["b": 4])
+precondition(histogram("") == [:])
+precondition(histogram("a") == ["a": 1])

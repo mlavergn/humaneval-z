@@ -1,0 +1,8 @@
+precondition(solve("AsDf") == "aSdF")
+precondition(solve("1234") == "4321")
+precondition(solve("ab") == "AB")
+precondition(solve("#a@C") == "#A@c")
+precondition(solve("#AsdfW^45") == "#aSDFw^45")
+precondition(solve("#6@2") == "2@6#")
+precondition(solve("#$a^D") == "#$A^d")
+precondition(solve("#ccc") == "#CCC")

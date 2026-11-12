@@ -1,0 +1,8 @@
+precondition(factorize(2) == [2])
+precondition(factorize(4) == [2, 2])
+precondition(factorize(8) == [2, 2, 2])
+precondition(factorize(57) == [3, 19])
+precondition(factorize(3249) == [3, 3, 19, 19])
+precondition(factorize(185193) == [3, 3, 3, 19, 19, 19])
+precondition(factorize(20577) == [3, 19, 19, 19])
+precondition(factorize(18) == [2, 3, 3])

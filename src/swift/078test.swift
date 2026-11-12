@@ -1,0 +1,7 @@
+precondition(hexKey("AB") == 1)
+precondition(hexKey("1077E") == 2)
+precondition(hexKey("ABED1A33") == 4)
+precondition(hexKey("2020") == 2)
+precondition(hexKey("123456789ABCDEF0") == 6)
+precondition(hexKey("112233445566778899AABBCCDDEEFF00") == 12)
+precondition(hexKey("") == 0)

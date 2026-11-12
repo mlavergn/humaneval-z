@@ -1,0 +1,10 @@
+precondition(doubleTheDifference([]) == 0)
+precondition(doubleTheDifference([5, 4]) == 25)
+precondition(doubleTheDifference([0.1, 0.2, 0.3]) == 0)
+precondition(doubleTheDifference([-10, -20, -30]) == 0)
+precondition(doubleTheDifference([-1, -2, 8]) == 0)
+precondition(doubleTheDifference([0.2, 3, 5]) == 34)
+// The odd numbers from -99 to 99.
+let lst = stride(from: -99, to: 100, by: 2).map(Double.init)
+let oddSum = stride(from: 1, to: 100, by: 2).map { $0 * $0 }.reduce(0, +)
+precondition(doubleTheDifference(lst) == oddSum)

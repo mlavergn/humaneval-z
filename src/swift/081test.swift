@@ -1,0 +1,6 @@
+precondition(numericalLetterGrade([4.0, 3.0, 1.7, 2.0, 3.5]) == ["A+", "B", "C-", "C", "A-"])
+precondition(numericalLetterGrade([1.2]) == ["D+"])
+precondition(numericalLetterGrade([0.5]) == ["D-"])
+precondition(numericalLetterGrade([0.0]) == ["E"])
+precondition(numericalLetterGrade([1.0, 0.3, 1.5, 2.8, 3.3]) == ["D", "D-", "C-", "B", "B+"])
+precondition(numericalLetterGrade([0.0, 0.7]) == ["E", "D-"])

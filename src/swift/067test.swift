@@ -1,0 +1,7 @@
+precondition(fruitDistribution("5 apples and 6 oranges", n: 19) == 8)
+precondition(fruitDistribution("5 apples and 6 oranges", n: 21) == 10)
+precondition(fruitDistribution("0 apples and 1 oranges", n: 3) == 2)
+precondition(fruitDistribution("1 apples and 0 oranges", n: 3) == 2)
+precondition(fruitDistribution("2 apples and 3 oranges", n: 100) == 95)
+precondition(fruitDistribution("2 apples and 3 oranges", n: 5) == 0)
+precondition(fruitDistribution("1 apples and 100 oranges", n: 120) == 19)

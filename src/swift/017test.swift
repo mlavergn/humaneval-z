@@ -1,0 +1,5 @@
+precondition(parseMusic("") == [])
+precondition(parseMusic("o o o o") == [4, 4, 4, 4])
+precondition(parseMusic(".| .| .| .|") == [1, 1, 1, 1])
+precondition(parseMusic("o| o| .| .| o o o o") == [2, 2, 1, 1, 4, 4, 4, 4])
+precondition(parseMusic("o| .| o| .| o o| o o|") == [2, 1, 2, 1, 4, 2, 4, 2])

@@ -1,0 +1,7 @@
+precondition(countUpper("aBCdEf") == 1)
+precondition(countUpper("abcdefg") == 0)
+precondition(countUpper("dBBE") == 0)
+precondition(countUpper("B") == 0)
+precondition(countUpper("U") == 1)
+precondition(countUpper("") == 0)
+precondition(countUpper("EEEE") == 2)

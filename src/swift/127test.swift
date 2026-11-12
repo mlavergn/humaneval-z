@@ -1,0 +1,8 @@
+precondition(intersection((1, 2), (2, 3)) == "NO")
+precondition(intersection((-1, 1), (0, 4)) == "NO")
+precondition(intersection((-3, -1), (-5, 5)) == "YES")
+precondition(intersection((-2, 2), (-4, 0)) == "YES")
+precondition(intersection((-11, 2), (-1, -1)) == "NO")
+precondition(intersection((1, 2), (3, 5)) == "NO")
+precondition(intersection((1, 2), (1, 2)) == "NO")
+precondition(intersection((-2, -2), (-3, -2)) == "NO")

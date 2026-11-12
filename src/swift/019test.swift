@@ -1,0 +1,5 @@
+precondition(sortNumbers("") == "")
+precondition(sortNumbers("three") == "three")
+precondition(sortNumbers("three five nine") == "three five nine")
+precondition(sortNumbers("five zero four seven nine eight") == "zero four five seven eight nine")
+precondition(sortNumbers("six five four three two one zero") == "zero one two three four five six")

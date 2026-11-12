@@ -1,0 +1,7 @@
+precondition(checkDictCase(["p": "pineapple", "b": "banana"]))
+precondition(!checkDictCase(["p": "pineapple", "A": "banana", "B": "banana"]))
+precondition(!checkDictCase(["p": "pineapple", "5": "banana", "a": "apple"]))
+precondition(!checkDictCase(["Name": "John", "Age": "36", "City": "Houston"]))
+precondition(checkDictCase(["STATE": "NC", "ZIP": "12345"]))
+precondition(checkDictCase(["fruit": "Orange", "taste": "Sweet"]))
+precondition(!checkDictCase([:]))

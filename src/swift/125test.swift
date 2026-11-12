@@ -1,0 +1,8 @@
+precondition(splitWords("Hello world!") == .words(["Hello", "world!"]))
+precondition(splitWords("Hello,world!") == .words(["Hello", "world!"]))
+precondition(splitWords("Hello world,!") == .words(["Hello", "world,!"]))
+precondition(splitWords("Hello,Hello,world !") == .words(["Hello,Hello,world", "!"]))
+precondition(splitWords("abcdef") == .count(3))
+precondition(splitWords("aaabb") == .count(2))
+precondition(splitWords("aaaBb") == .count(1))
+precondition(splitWords("") == .count(0))

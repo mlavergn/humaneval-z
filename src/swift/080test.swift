@@ -1,0 +1,8 @@
+precondition(!isHappy("a"))
+precondition(!isHappy("aa"))
+precondition(isHappy("abcd"))
+precondition(!isHappy("aabb"))
+precondition(isHappy("adb"))
+precondition(!isHappy("xyy"))
+precondition(isHappy("iopaxpoi"))
+precondition(!isHappy("iopaxioi"))

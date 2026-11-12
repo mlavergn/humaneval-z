@@ -1,0 +1,7 @@
+precondition(sortedListSum(["aa", "a", "aaa"]) == ["aa"])
+precondition(sortedListSum(["school", "AI", "asdf", "b"]) == ["AI", "asdf", "school"])
+precondition(sortedListSum(["d", "b", "c", "a"]) == [])
+precondition(sortedListSum(["d", "dcba", "abcd", "a"]) == ["abcd", "dcba"])
+precondition(sortedListSum(["AI", "ai", "au"]) == ["AI", "ai", "au"])
+precondition(sortedListSum(["a", "b", "b", "c", "c", "a"]) == [])
+precondition(sortedListSum(["aaaa", "bbbb", "dd", "cc"]) == ["cc", "dd", "aaaa", "bbbb"])

@@ -1,0 +1,8 @@
+precondition(fizzBuzz(50) == 0)
+precondition(fizzBuzz(78) == 2)
+precondition(fizzBuzz(79) == 3)
+precondition(fizzBuzz(100) == 3)
+precondition(fizzBuzz(200) == 6)
+precondition(fizzBuzz(4000) == 192)
+precondition(fizzBuzz(10000) == 639)
+precondition(fizzBuzz(100000) == 8026)

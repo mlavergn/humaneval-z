@@ -1,0 +1,5 @@
+precondition(makePalindrome("") == "")
+precondition(makePalindrome("x") == "x")
+precondition(makePalindrome("xyz") == "xyzyx")
+precondition(makePalindrome("xyx") == "xyx")
+precondition(makePalindrome("jerry") == "jerryrrej")

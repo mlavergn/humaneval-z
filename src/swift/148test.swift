@@ -1,0 +1,7 @@
+precondition(bf("Jupiter", "Neptune") == ["Saturn", "Uranus"])
+precondition(bf("Earth", "Mercury") == ["Venus"])
+precondition(bf("Mercury", "Uranus") == ["Venus", "Earth", "Mars", "Jupiter", "Saturn"])
+precondition(bf("Neptune", "Venus") == ["Earth", "Mars", "Jupiter", "Saturn", "Uranus"])
+precondition(bf("Earth", "Earth") == [])
+precondition(bf("Mars", "Earth") == [])
+precondition(bf("Jupiter", "Makemake") == [])

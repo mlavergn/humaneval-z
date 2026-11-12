@@ -1,0 +1,5 @@
+precondition(sumToN(1) == 1)
+precondition(sumToN(6) == 21)
+precondition(sumToN(11) == 66)
+precondition(sumToN(30) == 465)
+precondition(sumToN(100) == 5050)

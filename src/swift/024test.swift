@@ -1,0 +1,5 @@
+precondition(largestDivisor(3) == 1)
+precondition(largestDivisor(7) == 1)
+precondition(largestDivisor(10) == 5)
+precondition(largestDivisor(100) == 50)
+precondition(largestDivisor(49) == 7)

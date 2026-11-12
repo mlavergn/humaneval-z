@@ -1,0 +1,7 @@
+precondition(wordsInSentence("This is a test") == "is")
+precondition(wordsInSentence("lets go for swimming") == "go for")
+precondition(wordsInSentence("there is no place available here") == "there is no place")
+precondition(wordsInSentence("Hi I am Hussein") == "Hi am Hussein")
+precondition(wordsInSentence("go for it") == "go for it")
+precondition(wordsInSentence("here") == "")
+precondition(wordsInSentence("here is") == "is")

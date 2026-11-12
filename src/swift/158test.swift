@@ -1,0 +1,8 @@
+precondition(findMax(["name", "of", "string"]) == "string")
+precondition(findMax(["name", "enam", "game"]) == "enam")
+precondition(findMax(["aaaaaaa", "bb", "cc"]) == "aaaaaaa")
+precondition(findMax(["abc", "cba"]) == "abc")
+precondition(findMax(["play", "this", "game", "of", "footbott"]) == "footbott")
+precondition(findMax(["we", "are", "gonna", "rock"]) == "gonna")
+precondition(findMax(["we", "are", "a", "mad", "nation"]) == "nation")
+precondition(findMax(["this", "is", "a", "prrk"]) == "this")

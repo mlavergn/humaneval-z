@@ -1,0 +1,7 @@
+precondition(fibfib(2) == 1)
+precondition(fibfib(1) == 0)
+precondition(fibfib(5) == 4)
+precondition(fibfib(8) == 24)
+precondition(fibfib(10) == 81)
+precondition(fibfib(12) == 274)
+precondition(fibfib(14) == 927)

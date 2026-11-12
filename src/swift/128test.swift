@@ -1,0 +1,8 @@
+precondition(prodSigns([1, 2, 2, -4]) == -9)
+precondition(prodSigns([0, 1]) == 0)
+precondition(prodSigns([1, 1, 1, 2, 3, -1, 1]) == -10)
+precondition(prodSigns([]) == nil)
+precondition(prodSigns([2, 4, 1, 2, -1, -1, 9]) == 20)
+precondition(prodSigns([-1, 1, -1, 1]) == 4)
+precondition(prodSigns([-1, 1, 1, 1]) == -4)
+precondition(prodSigns([-1, 1, 1, 0]) == 0)

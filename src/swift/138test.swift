@@ -1,0 +1,8 @@
+precondition(!isEqualToSumEven(4))
+precondition(!isEqualToSumEven(6))
+precondition(isEqualToSumEven(8))
+precondition(isEqualToSumEven(10))
+precondition(!isEqualToSumEven(11))
+precondition(isEqualToSumEven(12))
+precondition(!isEqualToSumEven(13))
+precondition(isEqualToSumEven(16))

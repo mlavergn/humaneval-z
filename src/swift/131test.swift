@@ -1,0 +1,7 @@
+precondition(digits(5) == 5)
+precondition(digits(54) == 5)
+precondition(digits(120) == 1)
+precondition(digits(5014) == 5)
+precondition(digits(98765) == 315)
+precondition(digits(5576543) == 2625)
+precondition(digits(2468) == 0)

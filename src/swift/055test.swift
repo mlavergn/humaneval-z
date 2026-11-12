@@ -1,0 +1,5 @@
+precondition(fib(10) == 55)
+precondition(fib(1) == 1)
+precondition(fib(8) == 21)
+precondition(fib(11) == 89)
+precondition(fib(12) == 144)

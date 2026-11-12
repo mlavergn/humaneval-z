@@ -1,0 +1,5 @@
+precondition(moveOneBall([3, 4, 5, 1, 2]))
+precondition(moveOneBall([3, 5, 10, 1, 2]))
+precondition(!moveOneBall([4, 3, 1, 2]))
+precondition(!moveOneBall([3, 5, 4, 1, 2]))
+precondition(moveOneBall([]))

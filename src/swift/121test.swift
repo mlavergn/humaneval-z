@@ -1,0 +1,7 @@
+precondition(solution([5, 8, 7, 1]) == 12)
+precondition(solution([3, 3, 3, 3, 3]) == 9)
+precondition(solution([30, 13, 24, 321]) == 0)
+precondition(solution([5, 9]) == 5)
+precondition(solution([2, 4, 8]) == 0)
+precondition(solution([30, 13, 23, 32]) == 23)
+precondition(solution([3, 13, 2, 9]) == 3)

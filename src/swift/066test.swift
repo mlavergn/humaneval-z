@@ -1,0 +1,8 @@
+precondition(digitsum("") == 0)
+precondition(digitsum("abAB") == 131)
+precondition(digitsum("abcCd") == 67)
+precondition(digitsum("helloE") == 69)
+precondition(digitsum("woArBld") == 131)
+precondition(digitsum("aAaaaXa") == 153)
+precondition(digitsum(" How are yOu?") == 151)
+precondition(digitsum("You arE Very Smart") == 327)

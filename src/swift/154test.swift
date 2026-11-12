@@ -1,0 +1,6 @@
+precondition(!cycpatternCheck("xyzw", "xyw"))
+precondition(cycpatternCheck("yello", "ell"))
+precondition(!cycpatternCheck("whattup", "ptut"))
+precondition(cycpatternCheck("efef", "fee"))
+precondition(!cycpatternCheck("abab", "aabb"))
+precondition(cycpatternCheck("winemtt", "tinem"))

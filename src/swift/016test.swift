@@ -1,0 +1,5 @@
+precondition(countDistinctCharacters("") == 0)
+precondition(countDistinctCharacters("abcde") == 5)
+precondition(countDistinctCharacters("abcdecadeCADE") == 5)
+precondition(countDistinctCharacters("aaaaAAAAaaaa") == 1)
+precondition(countDistinctCharacters("Jerry jERRY JeRRRY") == 5)

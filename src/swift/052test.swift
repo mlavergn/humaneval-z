@@ -1,0 +1,6 @@
+precondition(belowThreshold([1, 2, 4, 10], t: 100))
+precondition(!belowThreshold([1, 20, 4, 10], t: 5))
+precondition(belowThreshold([1, 20, 4, 10], t: 21))
+precondition(belowThreshold([1, 20, 4, 10], t: 22))
+precondition(belowThreshold([1, 8, 4, 10], t: 11))
+precondition(!belowThreshold([1, 8, 4, 10], t: 10))
